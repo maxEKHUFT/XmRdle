@@ -1,0 +1,103 @@
+<html>
+<head>
+    <title>SPC Pattern Recognition</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="wordle.css">
+    <script type="module" src="wordleLDR.js"></script>
+</head>
+
+<body>
+
+<h1 id="title" style="color: #425563">XmRiddle</h1>
+
+<div id="icon-bar">
+    <span id="iconinfo">💡</span>
+    <span id="iconleaderboard" title="Leaderboard">📊</span>
+    <span id="iconBlurb" title="Blurb">❓</span>
+    <span id="iconsettings">⚙️</span>
+</div>
+<div id="leaderboardModal" class="modal">
+   <div id="leaderboardContent" style="color: #425563;">
+        <h2>Leaderboard</h2>
+        <div id="leaderboardList">Loading...</div>
+        <button id="closeLeaderboard">Close</button>
+   </div>
+</div>
+<div id="blurbModal" class="modal">
+  <div class="blurbContent">
+    <h2>Purpose</h2>
+    <p>
+      This SPC recognition mini-game is great if you're:
+    </p>
+
+    <ul class="centered-bullets">
+      <li>new to SPC/XmR charts</li>
+      <li>a little rusty</li>
+      <li>building confidence</li>
+    </ul>
+
+    <p>
+      Think of it as a <strong>supplement</strong> to actual training:
+    </p>
+
+    <p>
+      <a href="https://www.england.nhs.uk/wp-content/uploads/2019/12/making-data-count-getting-started-2019.pdf" 
+         target="_blank" 
+         rel="noopener noreferrer">
+        📘 Making Data Count
+      </a>
+    </p>
+
+    <p>
+      Just a simple, low-pressure way to practise and reinforce what you already know.
+    </p>
+
+    <p>
+      The leaderboard is <strong>optional</strong>, and no personal data is collected.
+    </p>
+    <button id="closeBlurb">Close</button>
+  </div>
+</div>
+<div id="keyModal" class="modal">
+   <div id="keyContent">
+        <h2>Icons explained</h2>
+
+        <img src="Key.svg" alt="Explanation of chart icons" class="keyImage">
+
+        <button id="closeKey">Close</button>
+   </div>
+</div>
+<hr>
+<br>
+<div id="direction"></div>
+
+<!-- this is where im inserting the svg image/chart -->
+<div id="chart"></div>
+
+<p id="instructions">
+    Select <strong>two</strong> icons that best describe the pattern shown above.
+</p>
+
+<!-- icon tiles -->
+<div id="icons"></div>
+
+<br>
+
+<!-- submit button -->
+<button id="submit">Submit</button>
+
+<br><br>
+
+<!-- result and explanation -->
+<h2 id="result"></h2>
+<p id="explanation"></p>
+<button id="next" style="display:none;">Next Chart</button>
+
+<!-- toast notification -->
+<div id="toast"></div>     
+
+</body>
+</html>
+
