@@ -52,8 +52,15 @@
     "correctIcons": ["pass","comcause"],
     "explanation": "Will consistently pass the target if nothing changes; Common cause - no significant change.",
     "direction": "Higher is better"
+   },
+   {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='-5 -5 160 60'><path d='M 150 0 L 143 0 L 136 0 L 130 0 L 123 0 L 117 0 L 110 0 L 104 0 L 97 0 L 91 0 L 84 0 L 78 0 L 71 0 L 65 0 L 58 0 L 52 0 L 45 0 L 39 0 L 32 0 L 26 0 L 19 0 L 13 0 L 6 0 L 0 0' fill='none' stroke='#8E99A1' stroke-width='0.5' stroke-dasharray='2,2' /><path d='M 150 12 L 143 12 L 136 12 L 130 12 L 123 12 L 117 12 L 110 12 L 104 12 L 97 12 L 91 12 L 84 12 L 78 12 L 71 12 L 65 12 L 58 12 L 52 12 L 45 12 L 39 12 L 32 12 L 26 12 L 19 12 L 13 12 L 6 12 L 0 12' fill='none' stroke='#8E99A1' stroke-width='0.5' stroke-dasharray='2,2' /><path d='M 150 31 L 143 31 L 136 31 L 130 31 L 123 31 L 117 31 L 110 31 L 104 31 L 97 31 L 91 31 L 84 31 L 78 31 L 71 31 L 65 31 L 58 31 L 52 31 L 45 31 L 39 31 L 32 31 L 26 31 L 19 31 L 13 31 L 6 31 L 0 31' fill='none' stroke='#DA291C' stroke-width='0.5' /><path d='M 150 6 L 143 6 L 136 6 L 130 6 L 123 6 L 117 6 L 110 6 L 104 6 L 97 6 L 91 6 L 84 6 L 78 6 L 71 6 L 65 6 L 58 6 L 52 6 L 45 6 L 39 6 L 32 6 L 26 6 L 19 6 L 13 6 L 6 6 L 0 6' fill='none' stroke='#FFC649' stroke-width='0.5' stroke-dasharray='2,2' /><path d='M 150 50 L 143 15 L 136 6 L 130 4 L 123 4 L 117 4 L 110 4 L 104 4 L 97 4 L 91 4 L 84 4 L 78 4 L 71 4 L 65 4 L 58 3 L 52 3 L 45 3 L 39 4 L 32 4 L 26 3 L 19 3 L 13 4 L 6 4 L 0 4' fill='none' stroke='#B3BBC1' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' /><circle cx='45' cy='3' r='1.25' fill='#0477BF' /><circle cx='130' cy='4' r='1.25' fill='#0477BF' /><circle cx='123' cy='4' r='1.25' fill='#0477BF' /><circle cx='117' cy='4' r='1.25' fill='#0477BF' /><circle cx='110' cy='4' r='1.25' fill='#0477BF' /><circle cx='104' cy='4' r='1.25' fill='#0477BF' /><circle cx='97' cy='4' r='1.25' fill='#0477BF' /><circle cx='91' cy='4' r='1.25' fill='#0477BF' /><circle cx='84' cy='4' r='1.25' fill='#0477BF' /><circle cx='78' cy='4' r='1.25' fill='#0477BF' /><circle cx='71' cy='4' r='1.25' fill='#0477BF' /><circle cx='65' cy='4' r='1.25' fill='#0477BF' /><circle cx='58' cy='3' r='1.25' fill='#0477BF' /><circle cx='52' cy='3' r='1.25' fill='#0477BF' /><circle cx='39' cy='4' r='1.25' fill='#0477BF' /><circle cx='32' cy='4' r='1.25' fill='#0477BF' /><circle cx='26' cy='3' r='1.25' fill='#0477BF' /><circle cx='19' cy='3' r='1.25' fill='#0477BF' /><circle cx='13' cy='4' r='1.25' fill='#0477BF' /><circle cx='6' cy='4' r='1.25' fill='#0477BF' /><circle cx='0' cy='4' r='1.25' fill='#0477BF' /><circle cx='143' cy='15' r='1.25' fill='#F25C05' /><circle cx='136' cy='6' r='1.25' fill='#F25C05' /><circle cx='150' cy='50' r='1.75' fill='white' stroke='#F25C05' stroke-width='1.25' /></svg>",
+    "correctIcons": ["pass","lowcon"],
+    "explanation": "Will consistently pass the target if nothing changes; Special cause of concerning nature or higher pressure due to Lower values.",
+    "direction": "Higher is better"
    }
 ]
+
 
 
 
