@@ -261,7 +261,8 @@ function endGame() {
 ❤️ Lives left: ${lives}
 📊 Charts survived: ${totalAnswered}
 🎯 Accuracy: ${accuracy}%
-Try it yourself at maxekhuft.github.io/XmRdle !`;
+Try it yourself at 
+maxekhuft.github.io/XmRdle !`;
 
     document.getElementById("scoreText").innerText = scoreStr;
 
