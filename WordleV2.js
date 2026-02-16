@@ -25,6 +25,7 @@ const icons = [
 ];
 
 let currentIndex = 0;
+let displayStreak = 0;
 let lives = 3;
 let streak = 0;
 let maxStreak = 0;
@@ -164,7 +165,8 @@ function revealResult(isCorrect, correctIcons) {
     resultEl.classList.add("result-wrong");
   }
 
-  updateHUD();
+   updateHUD();
+   tickStreak(); 
 
   document.getElementById("explanation").innerText =
     catalogue[currentIndex].explanation;
@@ -227,8 +229,22 @@ function nextChart() {
 function updateHUD() {
   document.getElementById("livesDisplay").innerText =
     "❤️".repeat(lives);
-  document.getElementById("streakDisplay").innerText =
-    `🔥 ${streak}`;
+  //document.getElementById("streakDisplay").innerText =
+  //  `🔥 ${streak}`;
+}
+
+function tickStreak() {
+    const el = document.getElementById("streakDisplay");
+
+    if (displayStreak < streak) {
+        displayStreak++;
+        el.innerText = `🔥 ${displayStreak}`;
+        setTimeout(tickStreak, 50); // adjust speed here
+    } else if (displayStreak > streak) {
+        displayStreak--;
+        el.innerText = `🔥 ${displayStreak}`;
+        setTimeout(tickStreak, 50);
+    }
 }
 
 function endGame() {
