@@ -373,6 +373,14 @@ hr {
   100% { transform: translateX(0); }
 }
 
+#livesDisplay {
+  display: inline-block;   /* needed for transform animation */
+  margin-right: 10px;      /* optional spacing from streak */
+}
+
 #livesDisplay.shake {
   animation: shake 0.3s;
 }
+
+
+
