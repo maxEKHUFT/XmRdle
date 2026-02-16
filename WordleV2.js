@@ -254,15 +254,32 @@ function tickStreak() {
 }
 
 function endGame() {
-  const accuracy = Math.round((totalCorrect / totalAnswered) * 100);
+    const accuracy = Math.round((totalCorrect / totalAnswered) * 100);
 
-  alert(`
-Game Over
-
-🔥 Best Streak: ${maxStreak}
-📊 Charts Survived: ${totalAnswered}
+    const scoreStr = `
+🔥 Streak: ${streak}
+❤️ Lives left: ${lives}
+📊 Charts answered: ${totalAnswered}
 🎯 Accuracy: ${accuracy}%
-  `);
+Try it yourself at [your URL here]!`;
 
-  location.reload();
+    document.getElementById("scoreText").innerText = scoreStr;
+
+    const modal = document.getElementById("gameOverModal");
+    modal.classList.add("show");
+
+    const copyBtn = document.getElementById("copyScoreBtn");
+    copyBtn.onclick = () => {
+        navigator.clipboard.writeText(scoreStr).then(() => {
+            showToast("Score copied! ✅");
+        }).catch(err => console.error("Copy failed", err));
+    };
+
+    document.getElementById("closeGameOver").onclick = () => {
+        modal.classList.remove("show");
+        location.reload();
+    };
+
+    document.getElementById("submit").disabled = true;
+    document.getElementById("next").style.display = "none";
 }
