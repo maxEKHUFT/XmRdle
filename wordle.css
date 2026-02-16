@@ -365,12 +365,6 @@ hr {
     background: #2e3b48;
 }
 
-#hud {
-  position: relative; 
-  z-index: 100;   
-  pointer-events: none; 
-}
-
 #copyScoreBtn,
 #closeGameOver {
     margin-top: 10px;
@@ -386,6 +380,7 @@ hr {
 #closeGameOver:hover {
     background: #2e3b48;
 }
+
 
 
 
