@@ -161,9 +161,15 @@ function revealResult(isCorrect, correctIcons) {
   } else {
     lives--;
     streak = 0;
+
+    const livesEl = document.getElementById("livesDisplay");
+    livesEl.classList.remove("shake");   
+    void livesEl.offsetWidth;      
+    livesEl.classList.add("shake");
+
     resultEl.innerText = "Not quite";
     resultEl.classList.add("result-wrong");
-  }
+}
 
    updateHUD();
    tickStreak(); 
