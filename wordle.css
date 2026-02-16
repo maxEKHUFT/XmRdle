@@ -365,5 +365,20 @@ hr {
     background: #2e3b48;
 }
 
+#copyScoreBtn,
+#closeGameOver {
+    margin-top: 10px;
+    padding: 6px 12px;
+    background: #425563;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#copyScoreBtn:hover,
+#closeGameOver:hover {
+    background: #2e3b48;
+}
 
 
