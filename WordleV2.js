@@ -257,7 +257,7 @@ function endGame() {
     const accuracy = Math.round((totalCorrect / totalAnswered) * 100);
 
     const scoreStr = `
-🔥 Streak: ${streak}
+🔥 Max Streak: ${maxStreak}
 ❤️ Lives left: ${lives}
 📊 Charts survived: ${totalAnswered}
 🎯 Accuracy: ${accuracy}%
