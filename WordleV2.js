@@ -39,18 +39,51 @@ function showToast(msg) {
   setTimeout(() => t.classList.remove("show"), 1200);
 }
 
-window.onload = async function() {
-  await loadCatalogue();
+// --- Header icons setup ---
+function setupHeaderIcons() {
+    // Blurb modal
+    document.getElementById("iconBlurb").addEventListener("click", () => {
+        document.getElementById("blurbModal").classList.add("show");
+    });
+    document.getElementById("closeBlurb").addEventListener("click", () => {
+        document.getElementById("blurbModal").classList.remove("show");
+    });
 
-  loadChart();
-  loadDir();
-  loadIcons();
-  setupSubmit();
+    // Key modal
+    document.getElementById("iconinfo").addEventListener("click", () => {
+        document.getElementById("keyModal").classList.add("show");
+    });
+    document.getElementById("closeKey").addEventListener("click", () => {
+        document.getElementById("keyModal").classList.remove("show");
+    });
 
-  document.getElementById("submit").disabled = true;
+    // Leaderboard modal
+    document.getElementById("iconleaderboard").addEventListener("click", () => {
+        document.getElementById("leaderboardModal").classList.add("show");
+    });
+    document.getElementById("closeLeaderboard").addEventListener("click", () => {
+        document.getElementById("leaderboardModal").classList.remove("show");
+    });
 
-  updateHUD();
-};
+    // Settings (if you have one)
+    document.getElementById("iconsettings").addEventListener("click", () => {
+        showToast("Settings not implemented yet ⚙️");
+    });
+}
+
+// --- Run after DOM is ready ---
+window.addEventListener("DOMContentLoaded", async () => {
+    setupHeaderIcons();
+
+    await loadCatalogue();
+    loadChart();
+    loadDir();
+    loadIcons();
+    setupSubmit();
+
+    document.getElementById("submit").disabled = true;
+    updateHUD();
+});
 
 function loadChart() {
   const chartEl = document.getElementById("chart");
@@ -169,10 +202,10 @@ function revealResult(isCorrect, correctIcons) {
 
     resultEl.innerText = "Not quite";
     resultEl.classList.add("result-wrong");
-}
+  }
 
-   updateHUD();
-   tickStreak(); 
+  updateHUD();
+  tickStreak(); 
 
   document.getElementById("explanation").innerText =
     catalogue[currentIndex].explanation;
@@ -235,8 +268,6 @@ function nextChart() {
 function updateHUD() {
   document.getElementById("livesDisplay").innerText =
     "❤️".repeat(lives);
-  //document.getElementById("streakDisplay").innerText =
-  //  `🔥 ${streak}`;
 }
 
 function tickStreak() {
