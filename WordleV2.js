@@ -259,9 +259,9 @@ function endGame() {
     const scoreStr = `
 🔥 Streak: ${streak}
 ❤️ Lives left: ${lives}
-📊 Charts answered: ${totalAnswered}
+📊 Charts survived: ${totalAnswered}
 🎯 Accuracy: ${accuracy}%
-Try it yourself at [your URL here]!`;
+Try it yourself at maxekhuft.github.io/XmRdle !`;
 
     document.getElementById("scoreText").innerText = scoreStr;
 
