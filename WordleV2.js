@@ -162,10 +162,14 @@ function revealResult(isCorrect, correctIcons) {
     lives--;
     streak = 0;
 
+    // update hearts
+    updateHUD();
+
+    // trigger shake
     const livesEl = document.getElementById("livesDisplay");
-    livesEl.classList.remove("shake");   
-    void livesEl.offsetWidth;      
-    livesEl.classList.add("shake");
+    livesEl.classList.remove("shake");  
+    void livesEl.offsetWidth;       
+    livesEl.classList.add("shake");    
 
     resultEl.innerText = "Not quite";
     resultEl.classList.add("result-wrong");
