@@ -35,6 +35,7 @@ let streak = 0;
 let maxStreak = 0;
 let totalAnswered = 0;
 let totalCorrect = 0;
+let submitMode = "submit";
 
 function showToast(msg) {
   const t = document.getElementById("toast");
@@ -143,26 +144,29 @@ function loadIcons() {
 
 function setupSubmit() {
   const submitBtn = document.getElementById("submit");
-  submitBtn.replaceWith(submitBtn.cloneNode(true));
-  const freshSubmit = document.getElementById("submit");
 
-  freshSubmit.addEventListener("click", () => {
-    const selected = [...document.querySelectorAll(".icon-tile.selected")]
-      .map(t => t.dataset.id);
+  submitBtn.onclick = () => {
+    if (submitMode === "submit") {
+      const selected = [...document.querySelectorAll(".icon-tile.selected")]
+        .map(t => t.dataset.id);
 
-    if (selected.length < 2) {
-      showToast("Please select 2 icons before submitting.");
-      return;
+      if (selected.length < 2) {
+        showToast("Please select 2 icons before submitting.");
+        return;
+      }
+
+      const correct = catalogue[currentIndex].correctIcons;
+
+      const isCorrect =
+        selected.length === correct.length &&
+        selected.every(id => correct.includes(id));
+
+      revealResult(isCorrect, correct);
+
+    } else if (submitMode === "next") {
+      nextChart();
     }
-
-    const correct = catalogue[currentIndex].correctIcons;
-
-    const isCorrect =
-      selected.length === correct.length &&
-      selected.every(id => correct.includes(id));
-
-    revealResult(isCorrect, correct);
-  });
+  };
 }
 
 function revealResult(isCorrect, correctIcons) {
@@ -214,13 +218,10 @@ function revealResult(isCorrect, correctIcons) {
   document.getElementById("explanation").innerText =
     catalogue[currentIndex].explanation;
 
-  const submitBtn = document.getElementById("submit");
-  const newBtn = submitBtn.cloneNode(true);
-  submitBtn.replaceWith(newBtn);
-
-  newBtn.innerText = "> > >";
-  newBtn.disabled = false;
-  newBtn.onclick = nextChart;
+const submitBtn = document.getElementById("submit");
+submitBtn.innerText = "> > >";
+submitBtn.disabled = false;
+submitMode = "next";
 }
 
 function updateSubmitState() {
@@ -245,9 +246,9 @@ function nextChart() {
     loadIcons();
 
     const submitBtn = document.getElementById("submit");
-    submitBtn.innerText = "Submit";
-    submitBtn.disabled = true;
-    setupSubmit();
+submitBtn.innerText = "Submit";
+submitBtn.disabled = true;
+submitMode = "submit";
 
     const resultEl = document.getElementById("result");
     resultEl.innerText = "";
